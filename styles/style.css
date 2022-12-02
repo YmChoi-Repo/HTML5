@@ -35,13 +35,19 @@ body {
   background: lightgreen;
   height: 50vh;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
 }
+
+/* .group{
+  margin: 0 15px;
+} */
 
 .group1{
   background-color: violet;
   width: 250px;
-  order: 1;
 }
 .group2{
   background-color: salmon;
@@ -50,7 +56,6 @@ body {
 .group3{
   background-color: gold;
   width: 190px;
-  order: -1;
 }
 
 /* 슬로건 */
