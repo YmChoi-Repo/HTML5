@@ -397,6 +397,34 @@ body {
   color: orangered;
 }
 
+/* 유효성 검사 배너 */
+.validation-list {
+  margin-top: 25px;
+}
+
+.validation-list li{
+  margin-top : 10px;
+}
+
+.validation-list a{
+  display: block;
+  background: url("./images/validation_icon.png") no-repeat 25px 50%,
+  #ccc linear-gradient(to bottom, #ccc, #eee);
+  padding: 8px 15px 8px 55px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+/* 가상 요소 선택자를 사용해서 하는방법!
+.validation-list a::before {
+  content: url("./images/validation_icon.png");
+} */
+
+.validation-list a:hover,
+.validation-list a:focus{
+  color: red;
+}
+
 
 
 
