@@ -1,9 +1,11 @@
 @import url(./fontello.css);
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./module.css);
 
 /* 숨김 콘텐츠 */
-.a11y-hidden, legend{
+.a11y-hidden,
+legend {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -229,15 +231,9 @@ body {
   0% {
     opacity: 1;
   }
-
-  50% {
+  100% {
     opacity: 0;
   }
-
-  100% {
-    opacity: 1;
-  }
-  
 }
 
 .visual {
@@ -245,46 +241,33 @@ body {
   position: relative;
 }
 
-.visual::before, .visual::after {
+.visual::before,
+.visual::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  animation-name: fadeEffect;
-  animation-duration: 2000ms;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-
+  animation: fadeEffect 2000ms infinite alternate;
 }
 
 .visual::before {
-  background-image: url("./images/ani_flower_01.png"), url("./images/ani_flower_02.png");
-  background-repeat: no-repeat;
-  background-position: 0 -10px, 600px 0;
+  background: url("./images/ani_flower_01.png") no-repeat 0 -10px,
+    url("./images/ani_flower_02.png") no-repeat 600px 0;
 }
 
 .visual::after {
-  background-image: url("./images/ani_flower_03.png"), url("./images/ani_flower_04.png");
-  background-repeat: no-repeat;
-  background-position: 300px 0px, 850px 0;
+  background: url("./images/ani_flower_03.png") no-repeat 300px 0,
+    url("./images/ani_flower_04.png") no-repeat 800px 0;
+  animation-delay: 1000ms;
 }
-
-
 
 .visual-text {
   font-family: Georgia, "Times New Roman", Times, serif;
-  animation-name: moveEffect;
-  animation-duration: 400ms;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  position: relative; 
+  animation: moveEffect 400ms ease-in-out forwards;
+  position: relative;
   z-index: 1;
-  /* display: inline-block; */
-  /* 포지션 absoulte도 가능 */
-    /* animation: moveEffect 400ms ease-in-out forwards; 
-  한줄로 줄이면 이렇게 */
 }
 
 /* 메인 */
@@ -307,7 +290,7 @@ body {
 
 .group2 {
   width: 380px;
-  height: 380px;
+  height: 300px;
 }
 
 .group3 {
@@ -604,7 +587,6 @@ body {
 }
 
 .news-title {
-  color: #e85e2c;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -745,6 +727,38 @@ body {
   height: 147px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+/* 인기 사이트 */
+
+.favorite {
+  position: relative;
+}
+
+.favorite-list {
+  background-color: yellow;
+  list-style-type: none;
+}
+
+.favorite-list li {
+  margin-top: 10px;
+}
+
+.favorite-list li::before {
+  content: "1";
+  background-color: #aaa;
+  color: #fff;
+  padding: 1px 6px;
+  font-size: 1.2rem;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+.favorite-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
 }
 
 /* 슬로건 */
